@@ -224,7 +224,7 @@ const Profile = () => {
                     <div className="w-full md:w-8/12 mt-4 md:mt-0 flex flex-col space-y-4">
                         {/* Red rew */}
                         <div
-                            className="bg-white p-5 rounded-lg min-h-[19.3rem] overflow-y-auto"
+                            className="bg-white p-5 rounded-lg h-[19.3rem] overflow-y-scroll"
                             style={{
                                 boxShadow: "0 8px 16px rgba(0, 128, 0, 0.2)",
                                 width: "100%",
@@ -256,7 +256,7 @@ const Profile = () => {
                                     redeemedRewards.map((reward, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-100 p-3 rounded-lg"
+                                            className="bg-gray-100 p-3 rounded-lg flex items-center"
                                             style={{
                                                 boxShadow:
                                                     "0 8px 16px rgba(0, 128, 0, 0.2)",
@@ -265,18 +265,20 @@ const Profile = () => {
                                             <img
                                                 src={reward.reward_image} // Assuming 'reward_image' holds the URL of the image
                                                 alt={reward.reward_title}
-                                                className="w-full h-auto rounded-lg mb-2"
+                                                className="max-w-14 rounded-lg mb-2 max-h-14"
                                             />
-                                            <p className="text-gray-700">
-                                                {reward.reward_title}
-                                            </p>
-                                            <p className="text-gray-600">
-                                                Points Used:{" "}
-                                                {reward.reward_points}
-                                            </p>
-                                            <p className="text-gray-500 text-sm">
-                                                Date: {reward.redeemed_at}
-                                            </p>
+                                            <div className="ml-5">
+                                                <p className="text-gray-700">
+                                                    {reward.reward_title}
+                                                </p>
+                                                <p className="text-gray-600">
+                                                    Points Used:{" "}
+                                                    {reward.reward_points}
+                                                </p>
+                                                <p className="text-gray-500 text-sm">
+                                                    Date: {reward.redeemed_at}
+                                                </p>
+                                            </div>
                                         </div>
                                     ))
                                 ) : (
@@ -288,7 +290,7 @@ const Profile = () => {
                         </div>
                         {/* Transactions Section */}
                         <div
-                            className="bg-white p-5 rounded-lg  min-h-[23rem]"
+                            className="bg-white p-5 rounded-lg  h-[23rem] overflow-y-scroll"
                             style={{
                                 boxShadow: "0 8px 16px rgba(0, 128, 0, 0.2)",
                             }}
